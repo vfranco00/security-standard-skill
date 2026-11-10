@@ -1,0 +1,18 @@
+# Gerado pela security-standard-skill em {{data}} · revisar antes de usar
+# Configuração interna em .security-standard/config.yml, lida linha a linha (chave, dois-pontos, valor) pela security-standard e pela security-automated-checks.
+# Depois de chave:, o valor vai até o primeiro ` #` (espaço seguido de #), que abre comentário como no YAML, e só então se aparam os espaços. Chave vazia não se aplica.
+# Cada valor numa linha só, com os itens separados por vírgula; colchetes, aspas e lista em várias linhas não são lidos.
+# Sem edição, este modelo é o padrão sem resposta: nível Essencial e nenhum perfil.
+
+# Nível alvo, cumulativo (Essencial, Fornecedor ou Big tech). Exemplo de valor: Fornecedor.
+nivel_alvo: Essencial
+# Perfis do projeto, separados por vírgula (financeiro, seguros, setor-publico, cartoes, saude). Exemplo de valor: financeiro, cartoes. Vazio liga só os controles de todos.
+perfis:
+# Endereço público do próprio sistema, nunca o de terceiros. Exemplo de valor: https://...
+url_publica:
+# Repositório no GitHub (dono/nome). Exemplo de valor: owner/repo
+repositorio_github:
+# Um comando só de leitura de ferramenta já instalada. Exemplo de valor: <comando só leitura>
+gancho_externo:
+# Controles fora do escopo, cada um com o motivo dentro do valor, depois de um travessão, sem dois-pontos e sem ` #` (espaço seguido de #) no motivo. Exemplo de valor: IAM-07 (motivo — …), DAT-03 (motivo — …)
+excluir:

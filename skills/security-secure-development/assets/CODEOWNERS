@@ -1,0 +1,21 @@
+# Gerado pela security-standard-skill em {{data}} · revisar antes de usar
+# Donos do código (DEV-02). Copie para .github/CODEOWNERS e troque cada marcador
+# {{...}} por um time ou por uma pessoa do repositório. Com "Require review from
+# Code Owners" ligado na proteção da branch principal, toda mudança num caminho
+# abaixo precisa da aprovação de um dos donos. Vale a última regra que casar com
+# o arquivo. No plano gratuito do GitHub, só funciona em repositório público.
+
+# Todo o repositório
+*                       @{{organizacao}}/{{time-de-desenvolvimento}}
+
+# Pipeline, Dependabot e este próprio arquivo: revisão de segurança
+/.github/               @{{organizacao}}/{{time-de-seguranca}}
+
+# Política de divulgação de vulnerabilidades
+/SECURITY.md            @{{organizacao}}/{{time-de-seguranca}}
+
+# Caminhos sensíveis do sistema: descomente e ajuste aos do projeto
+# /src/autenticacao/    @{{organizacao}}/{{time-de-seguranca}}
+# /src/pagamentos/      @{{organizacao}}/{{time-de-seguranca}}
+# /infra/               @{{organizacao}}/{{time-de-seguranca}}
+# /package.json         @{{organizacao}}/{{time-de-seguranca}}

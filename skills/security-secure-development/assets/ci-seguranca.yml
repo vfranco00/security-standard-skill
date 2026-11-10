@@ -1,0 +1,69 @@
+# Gerado pela security-standard-skill em {{data}} · revisar antes de usar
+# Pipeline de segurança (DEV-03): SAST com Semgrep, segredos com gitleaks e
+# dependências (SCA) com osv-scanner. Só ferramentas gratuitas, sem conta nem
+# licença; cada job roda na imagem oficial da ferramenta, fixada por versão e digest.
+# Copie para .github/workflows/ (se o arquivo já existir, compare e pergunte antes;
+# nunca sobrescreva), troque "main" pela branch principal e torne os três jobs
+# obrigatórios na proteção da branch (DEV-02).
+# Atualização (DEV-04): o Dependabot atualiza só a action fixada em "uses:", não as
+# imagens de "container:". O Renovate atualiza as duas; sem ele, confira a versão e
+# o digest das três imagens a cada trimestre (proposta da skill).
+name: seguranca
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 6 * * 1" # toda segunda-feira: dependências contra falhas novas
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sast:
+    name: SAST (Semgrep)
+    runs-on: ubuntu-latest
+    container:
+      image: semgrep/semgrep:1.182.0@sha256:4a34048c04fef049f71665047f074cffb00cc3d89482f965a5cd151d589237af
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      # O contêiner roda como root e a pasta do checkout é de outro usuário: sem
+      # este passo, o git recusa a pasta ("detected dubious ownership").
+      - name: Liberar a pasta do checkout para o git
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+      - name: Semgrep
+        run: semgrep scan --config p/default --error --metrics off
+
+  segredos:
+    name: Segredos (gitleaks)
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/gitleaks/gitleaks:v8.30.1@sha256:c00b6bd0aeb3071cbcb79009cb16a60dd9e0a7c60e2be9ab65d25e6bc8abbb7f
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0 # todo o histórico do git
+          persist-credentials: false
+      # Mesmo motivo do job sast: o gitleaks lê o histórico com o git, como root.
+      - name: Liberar a pasta do checkout para o git
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+      - name: gitleaks
+        run: gitleaks git --redact --no-banner .
+
+  dependencias:
+    name: Dependências (osv-scanner)
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/google/osv-scanner:v2.7.0@sha256:4f3b7e2c64b9d38a5febc5a7e4a3dfef1d1362f726dea7a2ef4762b46469fcd0
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      # Sai com 128 quando não acha manifesto nem lockfile: em repositório sem
+      # dependências, tire este job.
+      - name: osv-scanner
+        run: /osv-scanner scan source -r .

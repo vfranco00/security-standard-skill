@@ -1,0 +1,69 @@
+name: validar
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validar:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Lint das skills
+        if: ${{ !cancelled() }}
+        run: bash scripts/lint-skills.sh
+
+      - name: Linter do catálogo de controles
+        if: ${{ !cancelled() }}
+        run: python3 scripts/lint-controles.py
+
+      - name: Catálogo gerado em dia com os blocos
+        if: ${{ !cancelled() }}
+        run: python3 scripts/gerar-catalogo.py && test -z "$(git status --porcelain docs/)"
+
+      - name: Teste do linter e do gerador do catálogo
+        if: ${{ !cancelled() }}
+        run: bash scripts/testes/lint-controles.test.sh
+
+      - name: Teste do verificar.sh
+        if: ${{ !cancelled() }}
+        run: bash scripts/testes/verificar.test.sh
+
+      - name: Sintaxe dos graders dos evals
+        if: ${{ !cancelled() }}
+        run: bash scripts/testes/graders.test.sh
+
+      - name: Fontes respondem
+        if: ${{ !cancelled() }}
+        run: bash scripts/verificar-fontes.sh
+
+      - name: shellcheck
+        if: ${{ !cancelled() }}
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y shellcheck
+          shellcheck scripts/*.sh scripts/testes/*.sh skills/*/scripts/*.sh
+
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        if: ${{ !cancelled() }}
+        with:
+          enable-cache: false
+
+      - name: skills-ref validate
+        if: ${{ !cancelled() }}
+        run: |
+          shopt -s nullglob
+          for pasta in skills/*/; do
+            uvx --from 'git+https://github.com/agentskills/agentskills@83021e2be457a9b6679148719c1f6074f0ad975e#subdirectory=skills-ref' skills-ref validate "$pasta"
+          done
+
+      - name: claude plugin validate
+        if: ${{ !cancelled() }}
+        continue-on-error: true
+        run: npm install -g @anthropic-ai/claude-code@2.1.312 && claude plugin validate --strict .

@@ -1,0 +1,5 @@
+{
+  "name": "security-standard-skill",
+  "version": "0.1.0",
+  "description": "Padrão de segurança para projetos de software, no nível das big techs e das exigências das grandes empresas a fornecedores: catálogo de controles com fonte, análise de lacunas, plano priorizado, modelos de políticas, dossiê de segurança para clientes e verificação automática com ferramentas abertas."
+}

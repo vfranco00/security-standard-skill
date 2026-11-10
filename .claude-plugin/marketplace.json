@@ -1,0 +1,15 @@
+{
+  "name": "security-standard-skill",
+  "owner": {
+    "name": "vfranco00",
+    "url": "https://github.com/vfranco00"
+  },
+  "description": "Padrão de segurança para projetos de software, no nível das big techs e das exigências das grandes empresas a fornecedores: catálogo de controles com fonte, análise de lacunas, plano priorizado, modelos de políticas, dossiê de segurança para clientes e verificação automática com ferramentas abertas.",
+  "plugins": [
+    {
+      "name": "security-standard-skill",
+      "source": "./",
+      "description": "Padrão de segurança para projetos de software, no nível das big techs e das exigências das grandes empresas a fornecedores: catálogo de controles com fonte, análise de lacunas, plano priorizado, modelos de políticas, dossiê de segurança para clientes e verificação automática com ferramentas abertas."
+    }
+  ]
+}

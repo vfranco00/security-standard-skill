@@ -1,0 +1,6 @@
+# Termos que nenhum arquivo do repositório pode conter (erros de conteúdo deste repositório), um por linha.
+# O lint-skills.sh ignora linhas vazias e linhas que começam com #.
+# Termos que não podem ficar no repositório vão numa lista à parte: TERMOS_PRIVADOS=<arquivo> bash scripts/lint-skills.sh
+# As skills nunca afirmam conformidade nem certificação.
+está conforme com a ISO 27001
+somos certificados SOC 2

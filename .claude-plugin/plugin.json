@@ -1,0 +1,13 @@
+{
+  "name": "security-standard-skill",
+  "version": "0.1.0",
+  "description": "Padrão de segurança para projetos de software, no nível das big techs e das exigências das grandes empresas a fornecedores: catálogo de controles com fonte, análise de lacunas, plano priorizado, modelos de políticas, dossiê de segurança para clientes e verificação automática com ferramentas abertas.",
+  "author": {
+    "name": "vfranco00",
+    "url": "https://github.com/vfranco00"
+  },
+  "homepage": "https://github.com/vfranco00/security-standard-skill",
+  "repository": "https://github.com/vfranco00/security-standard-skill",
+  "license": "MIT",
+  "keywords": ["seguranca","security","appsec","devsecops","iso-27001","soc-2","nist-csf","cis-controls","owasp","vendor-assessment","fornecedor","compliance"]
+}

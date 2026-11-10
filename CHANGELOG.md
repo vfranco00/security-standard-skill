@@ -1,0 +1,9 @@
+# Changelog
+
+## 0.1.0 — 2026-11-09
+
+- Nove skills: a maestra `security-standard` e as especializadas `security-identity-access`, `security-data-encryption`, `security-secure-development`, `security-infra-operations`, `security-incident-continuity`, `security-governance-vendors`, `security-customer-evidence` e `security-automated-checks`.
+- Catálogo de 99 controles em seis famílias (IAM, DAT, DEV, OPS, IRC, GOV), cada um com nível mínimo, perfis, parâmetro, fontes com tipo, URL e data, e mapa para CCM/CAIQ v4.1, ISO/IEC 27001:2022 (conferida pela OLIR 155 do NIST), NIST CSF 2.0, CIS Controls v8.1 e OWASP ASVS 5.0. Nesta versão, o Mapa não traz ids de SOC 2 nem de SIG, que não foram conferidos em fonte oficial gratuita: as duas chaves ficam `—`, e a pergunta de questionário identificada só por id de SOC 2 ou de SIG fica com a equipe.
+- Modelos: inventário, lacunas, plano e estado do projeto; matriz de acessos; classificação de dados e política de backup e recuperação; política de correção por gravidade, SECURITY.md, workflow de CI de segurança, CODEOWNERS e Dependabot; checklist de hardening; planos de resposta a incidentes e de continuidade e registro de incidentes; política de segurança da informação, registro de riscos e lista de subprocessadores; dossiê de segurança (em português e em inglês) e respostas a questionários.
+- `scripts/lint-controles.py` confere os blocos de controle e `scripts/gerar-catalogo.py` gera `docs/catalogo-de-controles.md` e `docs/mapa-de-frameworks.md`. O `verificar.sh` da `security-automated-checks` roda as ferramentas abertas já instaladas, sem instalar nada. Os três têm teste em `scripts/testes/`.
+- Estrutura: manifestos para Claude Code, Gemini CLI, Codex e Cursor; lint das skills e dos termos proibidos; conferência das fontes; CI; um caso de avaliação por skill em `evals/`, não executado; desenho em `docs/design.md`.

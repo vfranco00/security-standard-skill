@@ -1,0 +1,28 @@
+# URL<TAB>justificativa: URL oficial que recusa robôs, conferida à mão.
+https://www.microsoft.com/licensing/docs/view/Microsoft-Products-and-Services-Data-Protection-Addendum-DPA	www.microsoft.com não responde ao curl do script (tempo esgotado em 20 s em 2026-11-09); URL oficial confirmada por busca na web em 2026-11-09
+https://www.iso.org/standard/27001	iso.org devolve 403 (desafio Cloudflare) a robôs; página oficial da norma lida em 2026-11-09
+https://www.iso.org/standard/88435.html	iso.org devolve 403 (desafio Cloudflare) a robôs; página oficial da emenda confirmada por busca na web em 2026-11-09
+https://sharedassessments.org/sig-ev/	sharedassessments.org devolve 403 (desafio Cloudflare) a robôs; página oficial lida em 2026-11-09
+https://sharedassessments.org/sig-faq/	sharedassessments.org devolve 403 (desafio Cloudflare) a robôs; página oficial lida em 2026-11-09
+https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm	planalto.gov.br derruba a conexão do curl do script (connection reset em 2026-11-09); URL oficial confirmada por busca na web em 2026-11-09; ficha oficial da norma no Senado, na mesma linha do fontes.md, aberta com 200 em 2026-11-09
+https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l12965.htm	planalto.gov.br derruba a conexão do curl do script (connection reset em 2026-11-09); URL oficial confirmada por busca na web em 2026-11-09; ficha oficial da norma no Senado, na mesma linha do fontes.md, aberta com 200 em 2026-11-09
+https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/decreto/d8771.htm	planalto.gov.br derruba a conexão do curl do script (connection reset em 2026-11-09); URL oficial confirmada por busca na web em 2026-11-09; ficha oficial da norma no Senado, na mesma linha do fontes.md, aberta com 200 em 2026-11-09
+https://www.sec.gov/Archives/edgar/data/1132597/000113259726000132/itub-20251231.htm	SEC/EDGAR devolve 403 a acesso automatizado sem user-agent declarado com contato; 20-F confirmado por busca na web em 2026-11-09
+https://www.sec.gov/Archives/edgar/data/1160330/000129281426001753/bbdform20f_2025.htm	SEC/EDGAR devolve 403 a acesso automatizado sem user-agent declarado com contato; 20-F lido em 2026-11-09
+https://www.sec.gov/Archives/edgar/data/917851/000129281426001844/valeform20f_2025.htm	SEC/EDGAR devolve 403 a acesso automatizado sem user-agent declarado com contato; 20-F lido em 2026-11-09
+https://www.sec.gov/Archives/edgar/data/1073404/000110465926027678/ggb-20251231x20f.htm	SEC/EDGAR devolve 403 a acesso automatizado sem user-agent declarado com contato; 20-F lido em 2026-11-09
+https://www.sec.gov/Archives/edgar/data/1119639/000129281426002168/pbrform20f_2025.htm	SEC/EDGAR devolve 403 a acesso automatizado sem user-agent declarado com contato; 20-F lido em 2026-11-09
+https://www.sec.gov/Archives/edgar/data/1355444/000162828026021824/erj-20251231.htm	SEC/EDGAR devolve 403 a acesso automatizado sem user-agent declarado com contato; 20-F lido em 2026-11-09
+https://www.sec.gov/Archives/edgar/data/1565025/000129281426000640/abevform20f_2025.htm	SEC/EDGAR devolve 403 a acesso automatizado sem user-agent declarado com contato; 20-F lido em 2026-11-09
+https://www.sec.gov/Archives/edgar/data/1691493/000129281426002166/nuform20f_2025.htm	SEC/EDGAR devolve 403 a acesso automatizado sem user-agent declarado com contato; 20-F lido em 2026-11-09
+https://www.sec.gov/Archives/edgar/data/1745431/000207097926000170/stne-20251231.htm	SEC/EDGAR devolve 403 a acesso automatizado sem user-agent declarado com contato; 20-F lido em 2026-11-09
+https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm	planalto.gov.br derruba a conexão do curl do script (connection reset em 2026-11-09); ficha oficial da norma no Senado, na mesma linha do fontes.md, aberta com 200 em 2026-11-09
+https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/decreto/d7962.htm	planalto.gov.br derruba a conexão do curl do script (connection reset em 2026-11-09); ficha oficial da norma no Senado, na mesma linha do fontes.md, aberta com 200 em 2026-11-09
+https://www.cisecurity.org/cis-benchmarks	cisecurity.org devolve 403 ao curl do script (em 2026-11-09)
+https://www.in.gov.br/en/web/dou/-/instrucao-normativa-n-5-de-30-de-agosto-de-2021-341649684	in.gov.br não responde ao curl do script (código 000 em 2026-11-09)
+https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-15-de-24-de-abril-de-2024-556243024	in.gov.br não responde ao curl do script (código 000 em 2026-11-09)
+https://www.in.gov.br/en/web/dou/-/resolucao-susep-n-90-de-18-de-agosto-de-2026-726687726	in.gov.br não responde ao curl do script (código 000 em 2026-11-09)
+https://www.cisa.gov/known-exploited-vulnerabilities-catalog	cisa.gov devolve 403 aos runners do GitHub Actions (em 2026-11-10)
+https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk	cisa.gov devolve 403 aos runners do GitHub Actions (em 2026-11-10)
+https://www.cisa.gov/securebydesign/pledge	cisa.gov devolve 403 aos runners do GitHub Actions (em 2026-11-10)
+https://www.cisa.gov/sites/default/files/publications/understanding-and-responding-to-ddos-attacks_508c.pdf	cisa.gov devolve 403 aos runners do GitHub Actions (em 2026-11-10)

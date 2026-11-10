@@ -1,0 +1,2 @@
+# security-standard-skill: pasta interna (inventário, lacunas, plano, evidências). O que vai para o cliente fica em docs/seguranca/.
+.security-standard/

@@ -1,0 +1,18 @@
+# Gerado pela security-standard-skill em {{data}} · revisar antes de usar
+# Atualização automática das dependências (DEV-04). Copie para .github/dependabot.yml
+# e deixe um bloco por ecossistema que o repositório usa. Alguns valores aceitos em
+# package-ecosystem: npm (também pnpm e yarn), pip (também pipenv e poetry), uv,
+# maven, gradle, gomod, bundler, composer, nuget, cargo, docker, terraform e
+# github-actions. Os alertas e as atualizações de segurança do Dependabot se ligam
+# nas configurações do repositório, não neste arquivo.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
